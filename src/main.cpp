@@ -45,7 +45,7 @@ bool startPumpCallback(std_srvs::Trigger::Request &req, std_srvs::Trigger::Respo
 }
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "start_pump_service");
+    ros::init(argc, argv, "relay_monitor_node");
     ros::NodeHandle nh;
 
     
