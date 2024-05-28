@@ -1,6 +1,8 @@
 #include <ros/ros.h>
 #include <std_srvs/Trigger.h>
 #include <stm_client/relay_control.h>
+#include <chrono>
+#include <thread>
 
 
 bool startPumpCallback(std_srvs::Trigger::Request &req, std_srvs::Trigger::Response &res) {
@@ -18,6 +20,7 @@ bool startPumpCallback(std_srvs::Trigger::Request &req, std_srvs::Trigger::Respo
 
         
         std_srvs::Trigger pump_off_srv;
+        std::this_thread::sleep_for(std::chrono::milliseconds(1500));
         if (pump_off_client.call(pump_off_srv)) {
             if (pump_off_srv.response.success) {
                 ROS_INFO("Successfully called /pump_off_service");
