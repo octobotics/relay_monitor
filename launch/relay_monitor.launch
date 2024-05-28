@@ -1,0 +1,6 @@
+<launch>
+    
+    <node pkg="relay_monitor" type="relay_monitor_node" name="relay_monitor_node" output="screen">
+
+    </node>
+  </launch>
